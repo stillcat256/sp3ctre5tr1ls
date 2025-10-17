@@ -5,12 +5,12 @@ info.onScore(74, function () {
     game.showLongText("it.", DialogLayout.Bottom)
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Food, function (sprite, otherSprite) {
+    info.startCountdown(3)
     info.changeScoreBy(1)
+    EPICSHED.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
+    music.play(music.createSoundEffect(WaveShape.Noise, 1, 5000, 255, 0, 5000, SoundExpressionEffect.Tremolo, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    EPICSHED.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
-    info.startCountdown(3)
-    music.play(music.createSoundEffect(WaveShape.Noise, 1, 5000, 255, 0, 5000, SoundExpressionEffect.Tremolo, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
     MASS_INFECTION = sprites.createProjectileFromSprite(img`
         . . . . . . . . . . . . . . . . 
         2 4 5 5 1 7 7 . . . . . . . . . 
@@ -1376,6 +1376,9 @@ info.onScore(1, function () {
     game.showLongText("note: this is a story game (or it's supposed to be.) controls: a=MASS INFECTION (only goes forwards) b=MASS INFECTION (and yes. of course it goes the opposite way you dumbass.) in this game, you are 1x and you must kill EPICSHED. you can continue now. oh yeah, different things could happen to your character in a future version. use hearing aids BECAUSE FOR SOME GODDAMN REASON (me) THE MASS INFECTION SFX IS SO LOUD!!! and bob may tell you to leave. PERMANENTLY. but don't listen to him it's supposed to be a storygame anyways. have fun:)!", DialogLayout.Center)
     game.showLongText("hello player! my name is bob and in learning how to code! i hate forsaken and u guys know dat so i made a 1x vs EPICSHED gaem for u!! have fun!", DialogLayout.Bottom)
 })
+info.onScore(180, function () {
+    game.showLongText("(take a break) almost there!", DialogLayout.Bottom)
+})
 info.onScore(150, function () {
     game.showLongText("(take a break) dude just dont go afk someone might restart the game. take a breather.", DialogLayout.Bottom)
 })
@@ -1521,7 +1524,7 @@ info.onScore(20, function () {
     game.showLongText("hey again PLAYER. now look, this game might be a bit too easy for you. get to level 50 and i might make it a bit harder.", DialogLayout.Bottom)
 })
 info.onScore(120, function () {
-    game.showLongText("fine. your rank is now PRO. get to level 250 and i'll tell you the link to the second game. (it's basically a checkpoint.)", DialogLayout.Full)
+    game.showLongText("fine. your rank is now PRO. get to level 200 and i'll tell you the link to the second game. (it's basically a checkpoint.)", DialogLayout.Full)
 })
 let BACKGROUND_ANIMATIONS: Sprite = null
 let MASS_INFECTION: Sprite = null
