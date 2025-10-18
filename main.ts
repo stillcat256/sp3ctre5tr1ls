@@ -1512,6 +1512,9 @@ info.onScore(78, function () {
 info.onScore(50, function () {
     game.showLongText("um. i lied. sorry PLAYER. it looks like i was too stupid and didn't know how to make it harder. well.. uh... there's nothing more to it.", DialogLayout.Bottom)
 })
+info.onScore(200, function () {
+    game.showLongText("TYPE THIS LINK IN THE URL BAR https://stillcat256.github.io /sp3ctre5tr1lsTWO/", DialogLayout.Full)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     EPICSHED.setPosition(randint(0, scene.screenWidth()), randint(0, scene.screenHeight()))
